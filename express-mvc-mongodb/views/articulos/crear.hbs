@@ -1,0 +1,38 @@
+<h1 class="text-center my-4">Agregar Nuevo Artículo</h1>
+
+<form action="/articulos" method="POST" class="mx-auto" style="max-width: 600px;">
+  <div class="mb-3">
+    <label for="descripcion" class="form-label">Descripción</label>
+    <input type="text" name="descripcion" id="descripcion" class="form-control" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="precio_soles" class="form-label">Precio S/</label>
+    <input type="number" name="precio_soles" id="precio_soles" class="form-control" step="0.01" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="precio_dolares" class="form-label">Precio $</label>
+    <input type="number" name="precio_dolares" id="precio_dolares" class="form-control" step="0.01" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="cantidad_stock" class="form-label">Cantidad en Stock</label>
+    <input type="number" name="cantidad_stock" id="cantidad_stock" class="form-control" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="marca" class="form-label">Marca</label>
+    <input type="text" name="marca" id="marca" class="form-control">
+  </div>
+
+  <div class="mb-3">
+    <label for="modelo" class="form-label">Modelo</label>
+    <input type="text" name="modelo" id="modelo" class="form-control">
+  </div>
+
+  <div class="text-center mt-4">
+    <button type="submit" class="btn btn-success">Guardar</button>
+    <a href="/articulos" class="btn btn-secondary">Cancelar</a>
+  </div>
+</form>

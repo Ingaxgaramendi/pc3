@@ -1,0 +1,39 @@
+<h1>Lista de Artículos</h1>
+
+<a href="/articulos/nuevo" class="btn btn-primary mb-3">➕ Nuevo Artículo</a>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Descripción</th>
+      <th>Precio (S/.)</th>
+      <th>Precio ($)</th>
+      <th>Cantidad en stock</th>
+      <th>Marca</th>
+      <th>Modelo</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each articulos}}
+    <tr>
+      <td>{{this.descripcion}}</td>
+      <td>{{this.precio_soles}}</td>
+      <td>{{this.precio_dolares}}</td>
+      <td>{{this.cantidad_stock}}</td>
+      <td>{{this.marca}}</td>
+      <td>{{this.modelo}}</td>
+      <td>
+        <a href="/articulos/{{this._id}}/editar" class="btn btn-warning btn-sm">Editar</a>
+        <form action="/articulos/{{this._id}}?_method=DELETE" method="POST" style="display:inline;">
+          <button class="btn btn-danger btn-sm" type="submit">Eliminar</button>
+        </form>
+      </td>
+    </tr>
+    {{else}}
+    <tr>
+      <td colspan="7" class="text-center">No hay artículos registrados</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

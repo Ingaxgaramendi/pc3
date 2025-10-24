@@ -1,0 +1,36 @@
+<h1>Editar Artículo</h1>
+
+<form action="/articulos/{{articulo._id}}?_method=PUT" method="POST">
+  <div class="mb-3">
+    <label>Descripción:</label>
+    <input type="text" name="descripcion" value="{{articulo.descripcion}}" class="form-control" required>
+  </div>
+
+  <div class="mb-3">
+    <label>Precio (S/):</label>
+    <input type="number" name="precio_soles" value="{{articulo.precio_soles}}" step="0.01" class="form-control" required>
+  </div>
+
+  <div class="mb-3">
+    <label>Precio ($):</label>
+    <input type="number" name="precio_dolares" value="{{articulo.precio_dolares}}" step="0.01" class="form-control" required>
+  </div>
+
+  <div class="mb-3">
+    <label>Cantidad en stock:</label>
+    <input type="number" name="cantidad_stock" value="{{articulo.cantidad_stock}}" class="form-control" required>
+  </div>
+
+  <div class="mb-3">
+    <label>Marca:</label>
+    <input type="text" name="marca" value="{{articulo.marca}}" class="form-control" required>
+  </div>
+
+  <div class="mb-3">
+    <label>Modelo:</label>
+    <input type="text" name="modelo" value="{{articulo.modelo}}" class="form-control" required>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Actualizar</button>
+  <a href="/articulos" class="btn btn-secondary">Cancelar</a>
+</form>
